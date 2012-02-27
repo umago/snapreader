@@ -12,7 +12,7 @@ rc=$?
 if [ ! $rc -eq 0 ]
 then
 
-	echo "\nFAILED: the mapped device is mounted?"
+	echo "FAILED: the mapped device is mounted?"
 	exit $rc
 
 fi
@@ -24,9 +24,9 @@ rc=$?
 if [ ! $rc -eq 0 ]
 then
 
-	echo "\nFAILED: Loops are busy"
+	echo "FAILED: Loops are busy"
 	exit $rc
 
 fi
 
-echo "\nSUCCESS: Loops were removed"
+echo "SUCCESS: Loops were removed"

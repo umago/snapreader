@@ -68,7 +68,7 @@ int main(int argc, char **argv)
 
 usage_exit:
 	std::cout << "Usage: " << std::endl;
-	std::cout << argv[0] << " <cow_device>" << std::endl;
+	std::cout << argv[0] << " -d <cow_device>" << std::endl;
 	std::cout << argv[0] << " -m " << "<delta> " << "<device>" << std::endl;
 	exit(1);
 }

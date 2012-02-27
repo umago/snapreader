@@ -26,7 +26,7 @@ rc=$?
 if [ ! $rc -eq 0 ]
 then
 
-	echo "\nFAILED: dmsetup is installed?"
+	echo "FAILED: dmsetup is installed?"
 	losetup -d /dev/loop1
 	losetup -d /dev/loop2
 	exit $rc
@@ -37,4 +37,4 @@ dmsetup create cow_device --table "0 $(($dev_size - USER_SEEK)) linear /dev/loop
 sync
 dmsetup create snap --table "0 $dev_size snapshot /dev/mapper/main_device /dev/mapper/cow_device P 8"
 
-echo "\nSUCCESS: Loops are ready"
+echo "SUCCESS: Loops are ready"

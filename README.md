@@ -17,7 +17,43 @@ Testing
     WARNING: 
     YOU'LL NEED ROOT ACCESS TO DO THE TESTS. SO TAKE CARE!
 
-TODO: SHOW HW TO TEST IT
+[root@umago snapreader]# cd scripts/
+[root@umago scripts]# ./create_files.sh
+
+...
+
+SUCCESS: Files created
+
+[root@umago scripts]# sh setup_loops.sh
+SUCCESS: Loops are ready
+
+[root@umago scripts]# mount /dev/mapper/snap /media/
+[root@umago scripts]# vim /media/some_data
+
+Write something...
+
+[root@umago scripts]# umount /media/
+[root@umago scripts]# sh remove_loops.sh 
+SUCCESS: Loops were removed
+
+[root@umago scripts]# cd ../source/
+[root@umago source]# ./snapreader -d ../scripts/cow_device
+[root@umago source]# ls delta
+delta
+
+[root@umago source]# ./snapreader -m delta ../scripts/main_device
+
+* * *
+
+`Let's test the merge :)`
+
+[root@umago source]# losetup /dev/loop1 ../scripts/main_device 
+[root@umago source]# mount /dev/loop1 /media/
+[root@umago source]# ls /media/some_data 
+/media/some_data
+
+[root@umago source]# umount /media/
+[root@umago source]# losetup -d /dev/loop1
 
 License
 -------

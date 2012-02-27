@@ -18,7 +18,7 @@ then
 	if [ ! $rc -eq 0 ]
 	then
 
-		echo "\nFAILED: Cannt setup /dev/loop1"
+		echo "FAILED: Cannt setup /dev/loop1"
 		exit $rc
 
 	fi
@@ -27,9 +27,9 @@ then
 	sync
 	losetup -d /dev/loop1
 
-	echo "\nSUCCESS: Files created"
+	echo "SUCCESS: Files created"
 	exit 0
 fi
 
-echo "\nFAILED: Files not created"
+echo "FAILED: Files not created"
 exit 1
