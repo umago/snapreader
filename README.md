@@ -26,6 +26,7 @@ Testing
 SUCCESS: Files created
 
 [root@umago scripts]# sh setup_loops.sh
+
 SUCCESS: Loops are ready
 
 [root@umago scripts]# mount /dev/mapper/snap /media
@@ -37,6 +38,7 @@ Write something...
 [root@umago scripts]# umount /media
 
 [root@umago scripts]# sh remove_loops.sh
+
 SUCCESS: Loops were removed 
 
 [root@umago scripts]# cd ../source 
@@ -44,11 +46,14 @@ SUCCESS: Loops were removed
 [root@umago source]# ./snapreader -d ../scripts/cow_device 
 
 [root@umago source]# ls delta 
+
 delta
 
 [root@umago source]# ./snapreader -m delta ../scripts/main_device 
 
+
 * * *
+
 
 `Let's test the merge :)`
 
@@ -57,11 +62,14 @@ delta
 [root@umago source]# mount /dev/loop1 /media
 
 [root@umago source]# ls /media/some_data
+
 /media/some_data
 
 [root@umago source]# umount /media
 
 [root@umago source]# losetup -d /dev/loop1
+
+*Yeah it works*
 
 License
 -------
